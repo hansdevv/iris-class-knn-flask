@@ -2,10 +2,11 @@ from flask import Flask, render_template, url_for, jsonify, request
 import pickle
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
+import models
 
 app = Flask(__name__)
 
-modelKNN = pickle.load(open('models/modelKNN.pkl','rb',))
+modelKNN = pickle.load(open('api/models/modelKNN.pkl','rb',))
 knn = KNeighborsClassifier(n_neighbors=3, metric='minkowski')
 
 @app.route('/')
@@ -31,9 +32,9 @@ def predict():
 
     return render_template('index.html', prediction=result)
 
-# if __name__ == '__main__':
-# 	app.run(
-# 		debug=True,
-# 		host='localhost',
-# 		port=5555
-# 	)
+if __name__ == '__main__':
+	app.run(
+		debug=True,
+		host='localhost',
+		port=5555
+	)
