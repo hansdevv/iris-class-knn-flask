@@ -15,11 +15,11 @@ app = Flask(__name__)
 modelKNN = pickle.load(open('models/modelKNN.pkl','rb',))
 knn = KNeighborsClassifier(n_neighbors=3, metric='minkowski')
 
-@app.route('/')
-def home():
-	return render_template('index.html')
+# @app.route('/')
+# def home():
+# 	return render_template('index.html')
 
-@app.route('/irisKNN', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def index_iris_KNN():
 	if(request.method == 'POST'):
 		res = ''
