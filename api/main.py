@@ -31,9 +31,9 @@ def predict():
 
     return render_template('index.html', prediction=result)
 
-if __name__ == '__main__':
-	app.run(
-		debug=True,
-		host='localhost',
-		port=5555
-	)
+# if __name__ == '__main__':
+# 	app.run(
+# 		debug=True,
+# 		host='localhost',
+# 		port=5555
+# 	)
