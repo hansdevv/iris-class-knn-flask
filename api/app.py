@@ -34,9 +34,12 @@ def index_iris_KNN():
 		return res
 	return render_template('class_iris_KNN.html')
 
-if __name__ == '__main__':
-	app.run(
-		debug=True,
-		host='localhost',
-		port=5555
-	)
+# if __name__ == '__main__':
+# 	app.run(
+# 		debug=True,
+# 		host='localhost',
+# 		port=5555
+# 	)
+
+if __name__ == 'main':
+      app.run(debug=True)
