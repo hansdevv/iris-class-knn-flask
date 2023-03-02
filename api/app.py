@@ -5,10 +5,10 @@ from sklearn.neighbors import KNeighborsClassifier
 import json
 
 class NumpyEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, np.ndarray):
-            return obj.tolist()
-        return json.JSONEncoder.default(self, obj)
+	def default(self, obj):
+			if isinstance(obj, np.ndarray):
+					return obj.tolist()
+			return json.JSONEncoder.default(self, obj)
 
 app = Flask(__name__)
 
